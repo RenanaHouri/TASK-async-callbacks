@@ -12,6 +12,26 @@
 //
 // Run: node ex05.js
 
+
 const os = require("os");
 
-// write your code here
+let count=0;
+const id=setInterval(()=>
+{
+    
+    count=count+1;
+    let free=os.freemem()
+    let total=os.totalmem()
+    let sum=(free/total)*100
+    console.log(`Free Memory: ${sum.toFixed(2)}%`);
+    
+    if(count==5)
+    {
+        clearInterval(id);
+        console.log("Memory logging complete.")
+        return;
+    }
+    
+
+
+},2000)
