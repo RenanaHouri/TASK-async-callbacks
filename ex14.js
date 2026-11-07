@@ -16,5 +16,21 @@
 //   Done!
 //
 // Run: node ex14.js
+function randomCountdown(num)
+{
+    const delay = 500 + Math.random() * 1000;
+    setTimeout(()=>{
+        console.log(String(num));
+        if(num==0)
+        {
+            console.log("Done!")
+            return
+        }
+        randomCountdown(num-1)
 
-// write your code here
+        
+
+    },delay)
+}
+
+randomCountdown(3);
