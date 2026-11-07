@@ -12,5 +12,16 @@
 // Run: node ex09.js
 
 const os = require("os");
+function getCpuInfo(callback){
+    const cpus = os.cpus();
+    callback(cpus)
 
-// write your code here
+}
+
+getCpuInfo((result) => {
+    result.forEach((cpu, index) => {
+        console.log(`CPU ${index}: ${cpu.model}`);
+    });
+});
+
+
