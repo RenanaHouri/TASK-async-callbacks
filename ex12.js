@@ -15,5 +15,16 @@ const fs = require("fs");
 const path = require("path");
 
 const filePath = path.join(__dirname, "notes.txt");
+fs.access(filePath, fs.constants.F_OK,(err)=>
+{
+    if(err)
+    {
+        console.log("File not found.");
+        return;
+    }
+     const extension=path.extname(filePath);
+     console.log(`notes.txt is a ${extension} file.`)
+
+})
 
 // write your code here
